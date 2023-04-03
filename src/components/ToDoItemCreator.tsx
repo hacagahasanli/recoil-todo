@@ -24,7 +24,6 @@ function TodoItemCreator() {
         <input type="text" value={inputValue} onChange={onChange} />
         <button onClick={addItem}>Add</button>
       </div>
-      <span>{value[0]?.text}</span>
     </div>
   );
 }

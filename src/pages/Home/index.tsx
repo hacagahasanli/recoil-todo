@@ -1,5 +1,5 @@
 import { useRecoilValue } from "recoil"
-import { Counter, TodoItemCreator } from "../../components"
+import { Counter, TodoItemCreator, TodoItem } from "../../components"
 import { todoListState } from "../../state"
 
 const Home = () => {

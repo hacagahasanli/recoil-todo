@@ -11,12 +11,12 @@ function TodoItemCreator() {
 
   const addItem = () => {
     setTodoList((oldTodoList: ITodo[]) => [
+      ...oldTodoList,
       {
         id: v4(),
         text: inputValue,
         isComplete: false,
       },
-      ...oldTodoList,
     ]);
     setInputValue('');
   };

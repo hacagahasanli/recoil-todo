@@ -1,12 +1,9 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { charCountState, counterState } from '../state';
-
-interface CounterState {
-  count: number;
-}
+import { ICounterState } from '../types';
 
 function Counter() {
-  const [counter, setCounter] = useRecoilState<CounterState>(counterState);
+  const [counter, setCounter] = useRecoilState<ICounterState>(counterState);
   const count = useRecoilValue(charCountState)
 
   const incrementCounter = () => {
@@ -15,7 +12,6 @@ function Counter() {
 
   return (
     <div>
-      <p>Count: {counter.count}</p>
       <p>Count: {count}</p>
       <button onClick={incrementCounter}>Increment</button>
     </div>

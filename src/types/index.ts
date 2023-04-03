@@ -1,5 +1,2 @@
-export interface ITodo {
-    id: string;
-    text: string;
-    isComplete: boolean;
-}
+export type { ICounterState } from './counterTypes/index';
+export type { ITodo } from "./todoItemTypes";

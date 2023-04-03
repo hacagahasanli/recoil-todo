@@ -1,4 +1,4 @@
-const namespace = `myApp/`;
+const namespace = `atoms/`;
 import { atom } from 'recoil';
 
 export const counterState = atom({

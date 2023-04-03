@@ -1,7 +1,7 @@
 import { selector } from "recoil";
 import { counterState } from "../atoms";
 
-const namespace = "selectorsCount"
+const namespace = "selectorsCount/"
 
 export const charCountState = selector({
     key: namespace + 'charCountState2',

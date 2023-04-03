@@ -3,12 +3,25 @@ import { useSetRecoilState } from "recoil";
 import { todoListState } from "../state";
 import { v4 } from "uuid"
 
+interface Todo {
+  id: string;
+  text: string;
+  isComplete: boolean;
+}
+
 function TodoItemCreator() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState<string>('');
   const setTodoList = useSetRecoilState(todoListState);
 
   const addItem = () => {
-    setTodoList((oldTodoList) => []);
+    setTodoList((oldTodoList: Todo[]) => [
+      ...oldTodoList,
+      {
+        id: getId(),
+        text: inputValue,
+        isComplete: false,
+      },
+    ]);
     setInputValue('');
   };
 

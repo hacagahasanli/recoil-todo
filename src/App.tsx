@@ -1,12 +1,22 @@
 import { useState } from 'react'
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+import Counter from './components/Counter';
 
+function App() {
   return (
-    <div className="App"></div>
-  )
+    <RecoilRoot>
+      <Counter />
+    </RecoilRoot>
+  );
 }
 
 export default App

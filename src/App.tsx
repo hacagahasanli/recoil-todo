@@ -1,12 +1,11 @@
 import { RecoilRoot } from 'recoil';
-import { Counter, TodoItemCreator } from './components';
+import { Home } from './pages';
 import './App.css'
 
 function App() {
   return (
     <RecoilRoot>
-      <Counter />
-      <TodoItemCreator />
+      <Home />
     </RecoilRoot>
   );
 }

@@ -1,7 +1,7 @@
-const namespace = `atoms/`;
 import { atom } from 'recoil';
+import { counterNamespace } from '../../constants';
 
 export const counterState = atom({
-    key: namespace + 'counterState2',
+    key: counterNamespace + 'counterState2',
     default: { count: 0 },
 });

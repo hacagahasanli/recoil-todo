@@ -1,8 +1,9 @@
 import { atom } from "recoil";
 import { ITodo } from "../../types";
+import { todoListNamespace } from "../../constants";
 
 export const todoListState = atom<ITodo[]>({
-    key: "todoListState",
+    key: todoListNamespace + "todoListState",
     default: []
 })
 

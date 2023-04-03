@@ -1,2 +1,5 @@
+//selectors
 export { charCountState } from "./selectors";
-export { counterState } from "./atoms";
+
+//atoms
+export { counterState, todoListState } from "./atoms";

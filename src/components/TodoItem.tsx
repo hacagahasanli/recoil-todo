@@ -1,3 +1,4 @@
+import React from "react";
 import { useRecoilState } from "recoil";
 import { ITodo } from "../types"
 import { todoListState } from "../state";
@@ -7,7 +8,7 @@ interface ToDoItemProps {
     item: ITodo
 }
 
-function TodoItem({ item }: ToDoItemProps) {
+const TodoItem = ({ item }: ToDoItemProps) => {
     const [todoList, setTodoList] = useRecoilState(todoListState);
     const index = todoList.findIndex((listItem) => listItem === item);
 

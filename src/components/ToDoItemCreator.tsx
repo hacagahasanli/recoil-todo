@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilCallback, useRecoilValue, useSetRecoilState } from "recoil";
 import { todoListState } from "../state";
 import { ITodo } from "../types";
 import { createTodoItem } from "../utils";
@@ -7,8 +7,6 @@ import { createTodoItem } from "../utils";
 function TodoItemCreator() {
   const [inputValue, setInputValue] = useState<string>('');
   const setTodoList = useSetRecoilState(todoListState);
-  const value = useRecoilValue(todoListState)
-
   const addItem = () => {
     setTodoList((oldTodoList: ITodo[]) => [...oldTodoList, createTodoItem(inputValue)]);
     setInputValue('');

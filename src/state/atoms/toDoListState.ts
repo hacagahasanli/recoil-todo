@@ -1,12 +1,8 @@
 import { atom } from "recoil";
+import { ITodo } from "../../types";
 
-interface Todo {
-    id: string;
-    text: string;
-    isComplete: boolean;
-  }
 
-export const todoListState = atom<Todo[]>({
+export const todoListState = atom<ITodo[]>({
     key: "todoListState",
     default: []
 })

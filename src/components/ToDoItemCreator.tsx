@@ -1,26 +1,22 @@
 import { useState } from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { todoListState } from "../state";
 import { v4 } from "uuid"
-
-interface Todo {
-  id: string;
-  text: string;
-  isComplete: boolean;
-}
+import { ITodo } from "../types";
 
 function TodoItemCreator() {
   const [inputValue, setInputValue] = useState<string>('');
   const setTodoList = useSetRecoilState(todoListState);
+  const value = useRecoilValue(todoListState)
 
   const addItem = () => {
-    setTodoList((oldTodoList: Todo[]) => [
-      ...oldTodoList,
+    setTodoList((oldTodoList: ITodo[]) => [
       {
         id: v4(),
         text: inputValue,
         isComplete: false,
       },
+      ...oldTodoList,
     ]);
     setInputValue('');
   };
@@ -30,9 +26,12 @@ function TodoItemCreator() {
   };
 
   return (
-    <div>
-      <input type="text" value={inputValue} onChange={onChange} />
-      <button onClick={addItem}>Add</button>
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <div>
+        <input type="text" value={inputValue} onChange={onChange} />
+        <button onClick={addItem}>Add</button>
+      </div>
+      <span>{value[0]?.text}</span>
     </div>
   );
 }

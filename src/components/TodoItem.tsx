@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import { ITodo } from "../types"
 import { todoListState } from "../state";
+import { removeItemAtIndex, replaceItemAtIndex } from "../utils";
 
 interface ToDoItemProps {
     item: ITodo
@@ -45,14 +46,6 @@ function TodoItem({ item }: ToDoItemProps) {
             <button onClick={deleteItem}>X</button>
         </div>
     );
-}
-
-function replaceItemAtIndex<T>(arr: T[], index: number, newValue: T): T[] {
-    return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
-}
-
-function removeItemAtIndex<T>(arr: T[], index: number) {
-    return [...arr.slice(0, index), ...arr.slice(index + 1)];
 }
 
 export { TodoItem }

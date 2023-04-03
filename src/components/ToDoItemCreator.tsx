@@ -17,7 +17,7 @@ function TodoItemCreator() {
     setTodoList((oldTodoList: Todo[]) => [
       ...oldTodoList,
       {
-        id: getId(),
+        id: v4(),
         text: inputValue,
         isComplete: false,
       },
